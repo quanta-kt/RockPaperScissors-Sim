@@ -35,7 +35,7 @@ class Entity:
         self.type = type
         self.position = pygame.Rect(x, y, ENTITY_SIZE, ENTITY_SIZE)
 
-        self._current_dest = (self.position.left, self.position.right)
+        self._current_dest = (self.position.top, self.position.left)
 
     def move(self):
 
@@ -81,7 +81,7 @@ if __name__ == "__main__":
         Entity(
             type=next(type_cycle),
             x=float(random.randint(0, WINDOW_WIDTH - ENTITY_SIZE)),
-            y=float(random.randint(0, WINDOW_WIDTH - ENTITY_SIZE)),
+            y=float(random.randint(0, WINDOW_HEIGHT - ENTITY_SIZE)),
         )
         for _ in range(ENTITY_COUNT)
     ]
